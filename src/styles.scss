@@ -3,22 +3,50 @@
   line-height: 1.2;
 }
 
-.hero .row {
-  min-height: clamp(160px, 26vw, 340px);
-}
-.hero-img {
-  height: clamp(160px, 26vw, 320px); /* más grande en pantallas grandes */
-  width: 100%;
-  object-fit: contain;
-  object-position: left center; /* ancla a la izquierda */
+.hero.hero-cover {
+  position: relative;
+  min-height: clamp(180px, 28vw, 400px);
+  background: url("assets/img/carro.png") left center / cover no-repeat #ffffff;
 }
 
-footer .text-muted { opacity: .85; }
-footer .container { display: flex; gap: .25rem; justify-content: center; }
+.hero.hero-cover .container,
+.hero.hero-cover .row,
+.hero.hero-cover .col-12 {
+  position: relative;
+  z-index: 1;
+}
+
+.hero.hero-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,.88) 0%, rgba(255,255,255,0) 55%);
+  pointer-events: none;
+}
+
+footer .text-muted { opacity: 0.85; }
+footer .container {
+  display: flex;
+  gap: .25rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;          /* responsive en móviles */
+}
 
 .table thead.table-dark th,
 .thead-dark th {
-  background-color: #2f3940; /* gris oscuro similar al mock */
+  background-color: #2f3940;
   color: #fff;
 }
-th[scope="row"], th[scope="col"]:first-child { text-align: center; }
+th[scope="row"],
+th[scope="col"]:first-child {
+  text-align: center;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: #f5f6f7; /* tono claro */
+}
+
+@media (max-width: 575.98px) {
+  .container { padding-left: 1rem; padding-right: 1rem; }
+}
