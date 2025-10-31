@@ -1,10 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { VehiculosModule } from './vehiculos/vehiculos.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [
+        AppComponent,
+        HttpClientTestingModule,
+        VehiculosModule,
+      ],
     }).compileComponents();
   });
 
@@ -14,16 +20,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'parcial1' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('parcial1');
-  });
-
-  it('should render title', () => {
+  it('should render header title TuSegundazo.com', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, parcial1');
+    const compiled: HTMLElement = fixture.nativeElement;
+    const h1 = compiled.querySelector('header h1');
+    expect(h1?.textContent?.trim()).toBe('TuSegundazo.com');
   });
 });
