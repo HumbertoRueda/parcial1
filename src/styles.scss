@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+.site-title {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  line-height: 1.2;
+}
+
+.hero .row {
+  min-height: clamp(160px, 26vw, 340px);
+}
+.hero-img {
+  height: clamp(160px, 26vw, 320px); /* más grande en pantallas grandes */
+  width: 100%;
+  object-fit: contain;
+  object-position: left center; /* ancla a la izquierda */
+}
+
+footer .text-muted { opacity: .85; }
+footer .container { display: flex; gap: .25rem; justify-content: center; }
+
+.table thead.table-dark th,
+.thead-dark th {
+  background-color: #2f3940; /* gris oscuro similar al mock */
+  color: #fff;
+}
+th[scope="row"], th[scope="col"]:first-child { text-align: center; }
