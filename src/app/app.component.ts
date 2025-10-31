@@ -5,7 +5,7 @@ import { VehiculosModule } from "./vehiculos/vehiculos.module";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, VehiculosModule],
+  imports: [VehiculosModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
