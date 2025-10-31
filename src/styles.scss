@@ -30,7 +30,7 @@ footer .container {
   gap: .25rem;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;          /* responsive en móviles */
+  flex-wrap: wrap;
 }
 
 .table thead.table-dark th,
@@ -44,9 +44,32 @@ th[scope="col"]:first-child {
 }
 
 .table-striped > tbody > tr:nth-of-type(odd) > * {
-  background-color: #f5f6f7; /* tono claro */
+  background-color: #f5f6f7; 
 }
 
 @media (max-width: 575.98px) {
+  .container { padding-left: 1rem; padding-right: 1rem; }
+}
+
+.site-title { font-size: clamp(1.25rem, 3vw, 2rem); line-height: 1.2; }
+
+.hero .hero-box{
+  position: relative;
+  min-height: clamp(180px, 28vw, 400px);
+  background: url("assets/img/carro.png") left center / cover no-repeat #fff;
+}
+
+.hero .hero-box > *{ position: relative; z-index: 1; }
+
+
+footer .text-muted{ opacity:.85; }
+footer .container{ display:flex; gap:.25rem; justify-content:center; align-items:center; flex-wrap:wrap; }
+
+.table thead.table-dark th, .thead-dark th{ background-color:#2f3940; color:#fff; }
+th[scope="row"], th[scope="col"]:first-child{ text-align:center; }
+
+.table-striped > tbody > tr:nth-of-type(odd) > *{ background:#f5f6f7; }
+
+@media (max-width: 575.98px){
   .container { padding-left: 1rem; padding-right: 1rem; }
 }
